@@ -7,5 +7,5 @@ Prerequisites:
 
 Clone the repository:
 ```
-git clone https://github.com/nadjahagen/frauas_kafka_exercises
+git clone https://github.com/nadjahagen/frauas_kafka_exercises.git
 ````
