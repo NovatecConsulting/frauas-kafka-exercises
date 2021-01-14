@@ -12,7 +12,7 @@ public class KafkaProducerDemo {
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 
-        //key is optional, but should be provided to assign the message to a specific partition
+        //note: key is optional, but should be provided to assign the message to a specific partition
         ProducerRecord<String, String> record = new ProducerRecord<>("numbers", "TestKey", "Hello World!");
 
         try(Producer<String, String> producer = new KafkaProducer<>(properties)) {
