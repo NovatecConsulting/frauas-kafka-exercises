@@ -1,3 +1,5 @@
+package demo;
+
 import org.apache.kafka.clients.producer.*;
 
 import java.util.*;
@@ -13,9 +15,8 @@ public class KafkaProducerDemo {
         //key is optional, but should be provided to assign the message to a specific partition
         ProducerRecord<String, String> record = new ProducerRecord<>("numbers", "TestKey", "Hello World!");
 
-        Producer<String, String> producer = new KafkaProducer<>(properties);
-        producer.send(record);
-
-        producer.close();
+        try(Producer<String, String> producer = new KafkaProducer<>(properties)) {
+            producer.send(record);
+        }
     }
 } 
