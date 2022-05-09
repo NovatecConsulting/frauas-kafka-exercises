@@ -19,7 +19,7 @@ public class KafkaConsumerDemo {
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "Exercise"); //Assign consumer to a consumer group
-        properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest"); 
+        properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
 
         AtomicBoolean running = new AtomicBoolean(true);
@@ -35,7 +35,7 @@ public class KafkaConsumerDemo {
         ));
 
         try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties)) {
-            consumer.subscribe(Collections.singleton("numbers"));
+            consumer.subscribe(Collections.singleton("words"));
             //wait for messages
             while (running.get()) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(2000)); //wait at most 2000ms
