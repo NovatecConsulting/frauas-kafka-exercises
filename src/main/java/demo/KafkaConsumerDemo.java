@@ -20,7 +20,7 @@ public class KafkaConsumerDemo {
         //TODO: Additional task (advanced), part 1: make sure that the program can be quit properly using a ShutDownHook and a CountDownLatch
 
         try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties)) {
-            consumer.subscribe(Collections.singleton("numbers"));
+            consumer.subscribe(Collections.singleton("words"));
             //TODO: the application should constantly poll for new messages. How could you enable this?
 
             //TODO: what happens if you increase the argument of the poll() method to e.g. 5000ms? And what happens if you send a message?
