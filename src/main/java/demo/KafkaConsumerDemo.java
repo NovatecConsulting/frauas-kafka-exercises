@@ -54,7 +54,7 @@ public class KafkaConsumerDemo {
         ));
 
         try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties)) {
-            consumer.subscribe(Collections.singleton("numbers"));
+            consumer.subscribe(Collections.singleton("words"));
             //using a while loop to constantly poll for messages
             while (running.get()) {
                 /*
